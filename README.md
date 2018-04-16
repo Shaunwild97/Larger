@@ -1,6 +1,20 @@
 # Larger
 The Lightweight Argument Parser for <a href="https://github.com/discordjs/discord.js/">discord.js</a>
 
+## Installation
+
+npm
+
+```sh
+npm install lw-arger
+```
+
+yarn
+
+```sh
+yarn add lw-arger
+```
+
 ## Usage
 
 Simplest example:
