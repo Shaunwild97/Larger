@@ -1,10 +1,14 @@
 {
-  "name": "Larger",
-  "version": "1.0.0",
+  "name": "larger",
+  "version": "1.1.0",
   "description": "The Light(weight) arg parser",
-  "main": "index.js",
+  "main": "larger.js",
   "author": "Shaunwild97",
   "license": "wtfpl",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/Shaunwild97/Larger"
+  },
   "private": false,
   "scripts": {
     "test": "jest --coverage"
