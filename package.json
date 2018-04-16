@@ -1,0 +1,12 @@
+{
+  "name": "Larger",
+  "version": "1.0.0",
+  "description": "The Light(weight) arg parser",
+  "main": "index.js",
+  "author": "Shaunwild97",
+  "license": "wtfpl",
+  "private": false,
+  "scripts": {
+    "test": "jest --coverage"
+  }
+}
