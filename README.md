@@ -6,7 +6,7 @@ The Lightweight Argument Parser for <a href="https://github.com/discordjs/discor
 Simplest example:
 
 ```js
-const larger = require('larger')
+const larger = require('lw-arger')
 
 const content = '?kick user "bad behaviour"'
 const prefix = '?'
