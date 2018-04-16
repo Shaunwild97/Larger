@@ -1,5 +1,5 @@
 const utils = require('./utils')
-const constants = require('./constants')
+const constants = require('./constants.json')
 
 function parseMessage(message, prefix) {
     if(!prefix) {
