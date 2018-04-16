@@ -1,4 +1,4 @@
-const globals = require('./globals')
+const constants = require('./constants')
 
 function concatenateQuotes(args) {
     let inQuote
@@ -9,8 +9,8 @@ function concatenateQuotes(args) {
             let head = result.pop()
             head += ` ${a}`
 
-            if (a.endsWith(globals.QUOTE_CHAR)) {
-                head = head.replace(globals.QUOTE_CHAR, globals.EMPTY_CHAR)
+            if (a.endsWith(constants.QUOTE_CHAR)) {
+                head = head.replace(constants.QUOTE_CHAR, constants.EMPTY_CHAR)
                 inQuote = false
             }
 
@@ -18,9 +18,9 @@ function concatenateQuotes(args) {
         } else {
             let head = a
 
-            if (head.startsWith(globals.QUOTE_CHAR)) {
+            if (head.startsWith(constants.QUOTE_CHAR)) {
                 inQuote = true
-                head = head.replace(globals.QUOTE_CHAR, globals.EMPTY_CHAR)
+                head = head.replace(constants.QUOTE_CHAR, constants.EMPTY_CHAR)
             }
 
             result.push(head)

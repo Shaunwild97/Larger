@@ -1,5 +1,5 @@
 const utils = require('./utils')
-const globals = require('./globals')
+const constants = require('./constants')
 
 function parseMessage(message, prefix) {
     if(!prefix) {
@@ -10,10 +10,10 @@ function parseMessage(message, prefix) {
         throw new Error('You must specify a message')
     }
 
-    const splitMessage = message.split(globals.SPACE_CHAR)
+    const splitMessage = message.split(constants.SPACE_CHAR)
     
     let command = splitMessage.shift()
-    command = command.replace(prefix, globals.EMPTY_CHAR)
+    command = command.replace(prefix, constants.EMPTY_CHAR)
 
     const args = utils.concatenateQuotes(splitMessage)
 
