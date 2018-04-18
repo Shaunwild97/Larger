@@ -1,6 +1,7 @@
 const larger = require('../larger')
 
 test('markdown example works', () => {
+    jest.resetModules()
     const content = '?kick user "bad behaviour"'
     const prefix = '?'
     
