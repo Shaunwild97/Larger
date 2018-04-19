@@ -1,6 +1,6 @@
 {
   "name": "lw-arger",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "The Light(weight) arg parser",
   "main": "larger.js",
   "author": "shaunwild97",
