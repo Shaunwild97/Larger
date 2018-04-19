@@ -1,12 +1,12 @@
 const constants = require('./constants.json')
 
 function splitMessage(message) {
-    const regex = /(\w+|(?:")((?:\\"|[^"])+)(?:"))/g
+    const regex = /(\w+|(?:")(?:\\"|[^"])+(?:"))/g
     const args = message.match(regex)
 
     const result = args.map(a => {
         if(a.startsWith(constants.QUOTE_CHAR)) {
-            return a.substring(1, a.length - 1)
+            return a.substring(1, a.length - 1).replace(/\\"/g, constants.QUOTE_CHAR)
         }
 
         return a

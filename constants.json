@@ -1,5 +1,6 @@
 {
     "SPACE_CHAR": " ",
     "QUOTE_CHAR": "\"",
-    "EMPTY_CHAR": ""
+    "EMPTY_CHAR": "",
+    "ESCAPED_QUOTE_CHAR": "\\\""
 }

@@ -40,6 +40,14 @@ describe('splitMessage scenarios', () => {
 
         expect(parser.splitMessage(input)).toEqual(expectedOutput)
     })
+
+    test('escaped quotes inside', () => {
+        const input = 'arg1 "arg \\"arg\\" arg" arg'
+
+        const expectedOutput = ['arg1', 'arg "arg" arg', 'arg']
+
+        expect(parser.splitMessage(input)).toEqual(expectedOutput)
+    })
 })
 
 describe('parseMessage', () => {
