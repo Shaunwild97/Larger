@@ -11,7 +11,7 @@ The Lightweight Argument Parser for <a href="https://github.com/discordjs/discor
 npm
 
 ```sh
-npm install lw-arger
+npm i lw-arger
 ```
 
 yarn
