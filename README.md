@@ -1,6 +1,11 @@
 # Larger
 The Lightweight Argument Parser for <a href="https://github.com/discordjs/discord.js/">discord.js</a>
 
+<p>
+    <a href="https://www.npmjs.com/package/lw-arger "><img src="https://img.shields.io/npm/dw/lw-arger.svg" /></a>
+    <a href="https://www.npmjs.com/package/lw-arger "><img src="https://img.shields.io/npm/v/lw-arger.svg" /></a>
+</p>
+
 ## Installation
 
 npm
