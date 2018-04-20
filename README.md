@@ -1,5 +1,5 @@
 # Larger
-The Lightweight Argument Parser for <a href="https://github.com/discordjs/discord.js/">discord.js</a>
+The Lightweight Argument Parser for <a href="https://github.com/discordjs/discord.js/">discord.js</a> (pronounced Lager)
 
 <p>
     <a href="https://www.npmjs.com/package/lw-arger "><img src="https://img.shields.io/npm/dw/lw-arger.svg" /></a>
