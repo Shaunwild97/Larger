@@ -64,6 +64,8 @@ function messageReceived(content) {
 }
 ```
 
+### Passthroughs
+
 You can also pass through objects from your library that may be needed (discord.js example)
 
 ```js
@@ -82,4 +84,40 @@ larger.handler({
 function messageReceived(message) {
     larger(message, message.content, prefix)
 }
+```
+
+### Fallbacks
+
+The handler also has support for fallback methods, which will be called if the command doesn't exist.
+
+```js
+const larger = require('lw-arger')
+
+const prefix = '?'
+const content = '?kick user reason'
+
+larger.handler({
+    fallback: () => {
+        console.log('command not found...')
+    }
+
+const {command, args} = larger(content, prefix)
+```
+
+### Arg Joining
+If there is only parameter on a handler then all of the arguments will be concatenated together which removes the need for quotes.
+
+```js
+const larger = require('lw-arger')
+
+const prefix = '?'
+const content = '?say hello this is a long message'
+
+larger.handler({
+    say: (message) => {
+        //message will be 'hello this is a long message'
+    }
+})
+
+const {command, args} = larger(content, prefix)
 ```
