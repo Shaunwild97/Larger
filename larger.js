@@ -17,6 +17,9 @@ function doParsePassthrough(passthrough, message, prefix) {
             args.unshift(passthrough)
 
             handler(...args)
+        } else if(commandHandler.fallback) {
+            args.unshift(passthrough)
+            commandHandler.fallback(...args)
         }
     }
 
@@ -35,6 +38,8 @@ function doParse(message, prefix) {
             }
 
             handler(...args)
+        } else if(commandHandler.fallback) {
+            commandHandler.fallback(...args)
         }
     }
 
