@@ -3,30 +3,50 @@ const constants = require('./constants.json')
 
 let commandHandler
 
-function larger(passthrough, message, prefix) {
-    const noPassthrough = (arguments.length < 3)
-
-    //This made me cringe
-    if(noPassthrough) {
-        prefix = message
-        message = passthrough
-    }
-
-    const {command, args} = parser.parseMessage(message, prefix)
+function doParsePassthrough(passthrough, message, prefix) {
+    let {command, args} = parser.parseMessage(message, prefix)
 
     if(commandHandler) {
         const handler = commandHandler[command]
 
-        if(!noPassthrough) {
-            args.unshift(passthrough)
-        }
+        if(handler) {            
+            if(handler.length == 1) {
+                args = [args.join(' ')]
+            }
 
-        if(handler) {
+            args.unshift(passthrough)
+
             handler(...args)
         }
     }
 
     return {command, args}
+}
+
+function doParse(message, prefix) {
+    let {command, args} = parser.parseMessage(message, prefix)
+
+    if(commandHandler) {
+        const handler = commandHandler[command]
+
+        if(handler) {
+            if(handler.length == 1) {
+                args = [args.join(' ')]
+            }
+
+            handler(...args)
+        }
+    }
+
+    return {command, args}
+}
+
+function larger(passthroughOrMessage, messageOrPrefix, prefixOrNull) {
+    if(prefixOrNull){
+        return doParsePassthrough(passthroughOrMessage, messageOrPrefix, prefixOrNull)
+    } else {
+        return doParse(passthroughOrMessage, messageOrPrefix)
+    }
 }
 
 function handler(handler) {

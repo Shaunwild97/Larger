@@ -50,3 +50,40 @@ test('handler works without passthrough', () => {
 
     expect(kick).toHaveBeenCalledWith('user', 'long reason')
 })
+
+
+test('handler works with 1 argument and passthrough', () => {
+    const say = jest.fn((string) => {})
+
+    larger.handler({
+        say
+    })
+
+    const content = '?say long message spaces'
+    const prefix = '?'
+    
+    const { command, args } = larger('passthrough', content, prefix)
+
+    const userToKick = args[0]
+    const reason = args[1]
+
+    expect(say).toHaveBeenCalledWith('passthrough', 'long message spaces')
+})
+
+test('handler works with 1 argument no passthrough', () => {
+    const say = jest.fn((string) => {})
+
+    larger.handler({
+        say
+    })
+
+    const content = '?say long message spaces'
+    const prefix = '?'
+    
+    const { command, args } = larger(content, prefix)
+
+    const userToKick = args[0]
+    const reason = args[1]
+
+    expect(say).toHaveBeenCalledWith('long message spaces')
+})

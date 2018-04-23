@@ -24,7 +24,7 @@ function parseMessage(message, prefix) {
         throw new Error('You must specify a message')
     }
 
-    const args = splitMessage(message)
+    let args = splitMessage(message)
     
     let command = args.shift()
     command = command.replace(prefix, constants.EMPTY_CHAR)
