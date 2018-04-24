@@ -1,7 +1,7 @@
 const constants = require('./constants.json')
 
 function splitMessage(message) {
-    const regex = /(\w+|(?:")(?:\\"|[^"])+(?:"))/g
+    const regex = /([^ "]+|(?:")(?:\\"|[^"])+(?:"))/g
     const args = message.match(regex)
 
     const result = args.map(a => {

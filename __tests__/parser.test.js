@@ -100,6 +100,14 @@ describe('parseMessage', () => {
     })
 })
 
+test('splitMessage works with specials', () => {
+    const content = '??? "Hello world" ~@#'
+
+    const expected = ['???', 'Hello world', '~@#']
+
+    expect(parser.splitMessage(content)).toEqual(expected)
+})
+
 describe('error cases', () => {
     test('no prefix throws error', () => {
         expect(() => {
