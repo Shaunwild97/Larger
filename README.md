@@ -100,6 +100,7 @@ larger.handler({
     fallback: () => {
         console.log('command not found...')
     }
+})
 
 const {command, args} = larger(content, prefix)
 ```
